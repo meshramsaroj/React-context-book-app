@@ -1,37 +1,10 @@
 import React, { useContext } from "react";
 import "../Booklist/Booklist.style.css"
 import { ThemeContext } from "../../context/themeContext";
-import BookDataContextProvider, { BookDataContext } from "../../context/BookDataContext";
 import NewBook from "../NewBook/NewBook";
 import Book from "../Book/Book";
 import freeTimeImage from "../../assets/hello-free-time.gif"
-
-// class Booklists extends Component {
-//   // static contextType = ThemeContext;
-//   render() {
-//     // console.log(this.context);
-
-//     return (
-//       <ThemeContext.Consumer>{(context) => {
-//         const { dark, isLightTheme, light } = context;
-//         const theme = isLightTheme ? light : dark;
-//         return (
-//           <div className="booklists" style={{ background: theme.bg, color: theme.syntax }}>
-//             <h1>Book List</h1>
-//             <ul>
-//               <li style={{ background: theme.ui }}> She Drives Me Crazy,</li>
-//               <li style={{ background: theme.ui }}>The Summer of Everything</li>
-//               <li style={{ background: theme.ui }}> Can’t Even: How Millennials Became the Burnout Generation</li>
-//             </ul>
-//           </div>
-//         )
-//       }}
-
-//       </ThemeContext.Consumer>
-
-//     );
-//   }
-// }
+import { BookDataContext } from "../../context/BookDataContext";
 
 const Booklists = () => {
   const { dark, isLightTheme, light } = useContext(ThemeContext);
