@@ -1,0 +1,25 @@
+.booklists {
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+}
+
+.booklists h1,
+p {
+    text-align: center;
+
+}
+
+.outer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+}
+
+.empty {
+    text-align: center;
+    padding: 8rem 2rem;
+    /* height: 71vh; */
+}

@@ -1,0 +1,42 @@
+.new-book {
+    width: 50%;
+    margin: 1rem auto;
+}
+
+.new-book h3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+form {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+label,
+input {
+    display: block;
+    padding: 10px;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="number"] {
+    border-radius: 10px;
+    outline: none;
+}
+
+input[type="submit"] {
+    margin: 10px 0;
+    background: #555;
+    cursor: pointer;
+}
+
+@media screen and (width : 250px) {
+    .new-book {
+        width: 80%;
+    }
+}

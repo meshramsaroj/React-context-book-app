@@ -1,0 +1,16 @@
+.btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (width:250px) {
+    .btn {
+        top: 3rem;
+        right: 30%;
+    }
+}
