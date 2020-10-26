@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import "./NewBook.style.css";
+import { BookDataContext } from '../../context/BookDataContext';
 
-const NewBook = ({ addBook }) => {
+const NewBook = () => {
+    const { dispatch } = useContext(BookDataContext);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [price, setPrice] = useState('');
@@ -9,7 +11,7 @@ const NewBook = ({ addBook }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(title, author, price, imgUrl);
-        addBook(title, author, price, imgUrl);
+        dispatch({ type: "ADD_BOOK", book: { title, author, price, imgUrl } });
         setTitle('');
         setAuthor('');
         setImgUrl('');
@@ -27,7 +29,7 @@ const NewBook = ({ addBook }) => {
                 <label>Book Price:</label>
                 <input type="number" placeholder="Enter Book Price" value={price} onChange={e => setPrice(e.target.value)} required />
                 <label>Image Url:</label>
-                <input type="text" placeholder="Image Url (OptionalS)" value={imgUrl} onChange={e => setImgUrl(e.target.value)} />
+                <input type="text" placeholder="Image Url (Optional)" value={imgUrl} onChange={e => setImgUrl(e.target.value)} />
                 <input type="submit" value="Add Book" />
             </form>
         </div>

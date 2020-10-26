@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./Book.style.css"
+import { BookDataContext } from '../../context/BookDataContext';
 
-const Book = ({ book, theme,removeBook }) => {
+const Book = ({ book, theme }) => {
+    const { dispatch } = useContext(BookDataContext);
     return (
         <div className="book-card" style={{ background: theme.ui }} key={book.id}>
             <div className="card-header" >
@@ -13,7 +15,7 @@ const Book = ({ book, theme,removeBook }) => {
             </div>
             <div className="card-footer">
                 <p>Written By : {book.author}</p>
-                <button className="delete-btn" onClick={()=>removeBook(book.id)}>Delete</button>
+                <button className="delete-btn" onClick={() => dispatch({ type: "REMOVE_BOOK", id: book.id })}>Delete</button>
             </div>
 
         </div>
